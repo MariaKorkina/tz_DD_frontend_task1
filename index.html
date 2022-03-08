@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class= "grey-text new-font">
+    <header>
+        <h1>Обзор технологии Gulp</h1>
+		<div class="pink">
+				<nav class="block1" id="navigation"> 
+					<ul class="purple-text nav" style="padding-top: 20px;">
+						
+						<li> <a href="#about"> Обзор </a> </li>
+						<li> <a href="#history"> История </a> </li>
+						<li> <a href="#characteristics"> Характеристики </a> </li>
+                        <li> <a href="#download">Установка </a> </li>
+						<li> <a href="#advantages"> Преимущества </a> </li>
+						<li> <a href="#limitations"> Недостатки </a> </li>
+					</ul>
+					 
+					<div class="logo-container">
+                    </div>
+					<p class="white-text paragraph text-overlap">
+						Gulp — это таск-менеджер для автоматического выполнения часто используемых задач, написанный на языке программирования JavaScript. 
+					</p>
+					
+                </nav>
+		</div>
+    </header>
+					
+		<div class="block1" id="about">
+			<h2> Обзор технологии</h2>
+				<p><a href="https://coderlessons.com/tutorials/veb-razrabotka/uchitsia-grav/gulp-kratkoe-rukovodstvo">Gulp </a> — это программа для выполнения задач, которая использует Node.js в качестве платформы. Gulp использует <strong>только</strong> код JavaScript и помогает запускать внешние задачи и крупномасштабные веб-приложения. Он создает системные автоматизированные задачи, такие как минимизация CSS и HTML, объединение библиотечных файлов и компиляция файлов SASS. Эти задачи можно запустить с помощью сценариев Shell или Bash в командной строке.</p>
+	   </div>
+
+		
+			<div class="block1 no-paddig-top" id="history">
+				<h2> История </h2>
+				
+				<ul class="history">
+					<li> <span class="bold-text"> Gulp v1.0.0 был выпущен 15 января 2015 года  </span> </li>
+                    <li> <span class="bold-text"> Gulp.js 3.9.1 был единственной версией много лет. И хотя был доступен Gulp 4, его нужно было устанавливать с помощью npm install gulp@next </span> </li>
+					<li> <span class="bold-text"> 10 декабря 2018 года Gulp.js 4.0 был объявлен единственной версией и появился в менеджере пакетов npm</span> </li>
+				</ul>
+		   </div>
+
+			
+			<div class="block1 no-paddig-top" id="characteristics">
+				<h2> Характеристики </h2>
+				<ul class="str-points"> 
+					<li> Обеспечивает минификацию и конкатенацию </li>
+					<li> Использует чистый код JavaScrip </li>
+					<li> Преобразует LESS или SASS в компиляцию CSS </li>
+					<li> Управляет манипуляциями с файлами в памяти и повышает скорость с помощью платформы Node.js </li>
+					<li>Оптимизация ресурсов таких как javascript, css, изображения</li>
+					<li> Автоматическая перезагрузка браузера при сохранении файла </li>
+					<li> Создание карт проекта </li>
+					<li> Использование автопрефиксера </li>
+				</ul>
+		    </div>
+
+			
+            <div class="block1 no-padding-top" id="download">
+                <h2> Установка </h2>
+				<p class="paragraph"> 
+                    <br>Установка Gulp 4 довольно простая. Так как Gulp написан на языке javascript, изначально необходимо установить Node.js.
+                    С сайта <a href="https://nodejs.org">Node.js</a> нужно скачать и установить инсталлятор последней версии.<br>
+                    <img src="./f2960b7269.jpg" alt="nodejs"> <br>
+
+                    <br>Далее создаеется папка для проекта и вызывается окно терминала в этом каталоге. В командной строке необходимо запустить инициализацию проекта:
+                    <img src="./5562a9a95e.jpg" alt="npm" /> <br>
+
+					<br>В результате получается файл <strong>package.json</strong>, который содержит информацию о проекте и установленных плагинах.<br> Далее необходимо установить gulp в проект:
+					<img src="./6925efe5f0.jpg" alt="npm-save-dev"> <br>
+
+					<br>После установке Gulp 4 название пакета и его версия сохранятся в файле <strong>package.json</strong>. Флаг --save-dev используется для сохранения пакета в <strong>package.json</strong>в раздел <strong>devDependencies</strong>, то есть в целях разработки.<br> 
+					Если установить пакет с флагом --save, то пакет попадает в раздел dependencies (для запуска приложения). <br>
+
+					<br>Такой подход дает возможность сохранять все пакеты в файле <strong>package.json</strong> со всеми зависимостями, а при разворачивании нового проекта достаточно скопировать файл <strong>package.json</strong> и запустить команду: <br> 
+					<img src="./install.jpg" alt="install"> <br>
+
+					<br>В результате, все пакеты и зависимости установятся автоматически. После установки gulp в каталоге проекта создалась папка <strong>node_modules.</strong> Все новые установленные пакеты и зависимости сохраняются в данную папку. Поэтому изменять содержимое этого каталога нельзя. <br>
+
+					<br>Далее в каталоге проекта создаем файл <strong>gulpfile.js</strong>. Это самый <italic>основной файл</italic>, без которого Gulp работать не может. В него можно писать любой javascript код, но gulp — это менеджер управления задачами, и эти задачи описываются в этом файле в виде обычных функций. Что бы запускать эти задачи, функцию нужно экспортировать через оператор exports. <br>
+
+					<br>Для запуска Gulp можно установить отдельную утилиту глобально: <br>
+					<img src="./global.jpg" alt="global" /> <br>
+
+					<br> После этого в консоли ввести команду gulp и через пробел название задачи: <br>
+					<img src="./gulp_name.jpg" alt="start">
+                </p>
+
+				
+            </div>
+
+            <div class="block1 no-paddig-top" id="advantages">
+				<h2> Преимущества </h2>
+				
+                <ul class="str-points"> 
+					<li> Быстродействие</li>
+					<li> Легок в понимании и кодировании </li>
+					<li>Легко тестировать веб-приложения</li>
+					<li> Плагины просты в использовании, предназначены для одновременного выполнения одного действия</li>
+					<li>Многократное выполнение повторяющихся задач</li>
+				</ul>
+            </div>
+			 
+			 
+			
+			<div class="block1 no-paddig-top" id="limitations">
+				<h2> Недостатки </h2>
+				
+                <ul class="str-points"> 
+					<li> Большое количество зависимостей</li>
+					<li> Невозможность выполнения нескольких задач </li>
+					<li> Не такая чистая конфигурация, как у <a href="https://gruntjs.com/">Grant</a></li>
+				</ul>
+
+				<a id="gototop" href="#navigation"> 
+					<img src="2263537.png" width="75px" height="75px">
+				 </a>
+		    </div>
+
+            <footer>
+				<p style="text-align: center; margin-top: 25px;"> Коркина Мария Дмитриевна </p>
+				<p style="text-align: center;"> 2022 </p>
+            </footer>
+			
+</body>
+</html>
